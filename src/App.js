@@ -24,7 +24,6 @@ class App extends React.Component {
         this.setState({
             darkMode: !this.state.darkMode
         })
-        console.log(this.state.darkMode)
     }
 
     handleSubmit = async (searchTerm) => {
@@ -89,7 +88,6 @@ class App extends React.Component {
         const theme = createMuiTheme({
             palette: {
                 type: 'dark',
-
             },
         })
 
