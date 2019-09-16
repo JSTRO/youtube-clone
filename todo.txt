@@ -1,0 +1,8 @@
+todo
+
+- clean up code
+- change background in palette
+
+
+- handle no results
+- comments?
