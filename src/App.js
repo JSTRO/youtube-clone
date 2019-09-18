@@ -5,6 +5,8 @@ import { SearchBar, VideoDetail, VideoList, DarkMode } from './components'
 import youtube from './api/youtube'
 import './style.css'
 
+//console.log(process.env.REACT_APP_API_KEY)
+
 class App extends React.Component {
     state = {
         videos: [],
@@ -32,7 +34,7 @@ class App extends React.Component {
             params: {
                 part: 'snippet',
                 maxResults: 5,
-                key: 'AIzaSyC20Se7X2phj5V02E7mnTN8CjlDxePS1s4',
+                key: process.env.REACT_APP_API_KEY,
                 type: 'video',
                 q: searchTerm
             }
@@ -45,7 +47,7 @@ class App extends React.Component {
             params: {
                 part: 'snippet, statistics',
                 id: items.map((item) => item.id.videoId).join(","),
-                key: 'AIzaSyC20Se7X2phj5V02E7mnTN8CjlDxePS1s4',
+                key: process.env.REACT_APP_API_KEY,
             }
         })
 
@@ -54,7 +56,7 @@ class App extends React.Component {
             params: {
                 part: 'snippet',
                 id: items.map((item) => item.snippet.channelId).join(","),
-                key: 'AIzaSyC20Se7X2phj5V02E7mnTN8CjlDxePS1s4',
+                key: process.env.REACT_APP_API_KEY,
             }
         })
 
